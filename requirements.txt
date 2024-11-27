@@ -1,0 +1,15 @@
+flask
+torch
+torchvision
+transformers==4.43.3
+accelerate
+huggingface_hub==0.24.3
+Pillow
+protobuf
+sentencepiece
+bitsandbytes
+tqdm
+onnxruntime-gpu
+safetensors
+numpy
+pandas

@@ -1,0 +1,23 @@
+@echo off
+echo Starting setup...
+
+if not exist venv (
+    echo Creating new Python environment...
+    python -m venv venv
+    
+    echo Activating environment...
+    call venv\Scripts\activate
+    
+    echo Installing PyTorch (this may take a few minutes)...
+    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+    
+    echo Installing other required packages...
+    pip install -r requirements.txt
+) else (
+    echo Activating existing environment...
+    call venv\Scripts\activate
+)
+
+echo Starting web server...
+echo Open http://localhost:5000 in your web browser
+python server\app.py
